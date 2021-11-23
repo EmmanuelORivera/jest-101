@@ -15,3 +15,15 @@ describe("calculator", () => {
     });
   });
 });
+
+// Example of tests from hotel reservation
+describe("Hotel Sunshine", () => {
+  describe("Reservation", () => {
+    it("should make a reservation when there are enough rooms available", () => {});
+    it("should warn the administrator when there are only 5 available rooms left", () => {});
+  });
+  describe("Checkout", () => {
+    it("should check if any appliance is broken", () => {});
+    it("should refund gest when checkout is earlier than planned", () => {});
+  });
+});
