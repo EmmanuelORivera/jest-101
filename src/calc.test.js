@@ -1,3 +1,4 @@
+const { beforeAll, afterAll } = require("@jest/globals");
 const { add, Calculator, db } = require("./calc");
 
 //Test suit
@@ -51,13 +52,24 @@ describe("addition", () => {
 });
 
 describe("database", () => {
+  beforeAll(() => {
+    console.log("Before all");
+  });
   beforeEach(() => {
     db.connect("localhost", "9999", "user", "pass");
   });
   afterEach(() => {
     db.disconnect();
   });
-  it("some test", () => {
-    console.log("test is executed");
+  afterAll(() => {
+    console.log("After all");
+  });
+
+  it("some test 1", () => {
+    console.log("test 1 is executed");
+  });
+
+  it("some test 2", () => {
+    console.log("test 2 is executed");
   });
 });
