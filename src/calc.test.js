@@ -1,5 +1,4 @@
-const { beforeAll, afterAll } = require("@jest/globals");
-const { add, Calculator, db } = require("./calc");
+import { add, Calculator, db } from "./calc";
 
 //Test suit
 describe("calculator", () => {

@@ -20,4 +20,4 @@ const db = {
     console.log("Server is disconnected");
   },
 };
-module.exports = { add, Calculator, db };
+export { add, Calculator, db };
