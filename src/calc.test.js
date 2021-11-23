@@ -1,9 +1,9 @@
-const add = require("./calc");
+const { add, Calculator } = require("./calc");
 
 //Test suit
 describe("calculator", () => {
   //Test cases
-  describe("should perform addition", () => {
+  describe("addition", () => {
     it("adds two positive numbers", () => {
       expect(add(1, 2)).toEqual(3);
     });
@@ -25,5 +25,27 @@ describe("Hotel Sunshine", () => {
   describe("Checkout", () => {
     it("should check if any appliance is broken", () => {});
     it("should refund gest when checkout is earlier than planned", () => {});
+  });
+});
+
+describe("addition", () => {
+  it("adds two positive numbers", () => {
+    const options = {
+      precision: 2,
+    };
+
+    const calc = new Calculator(options);
+    const result = calc.add(1.333, 3.2);
+    expect(result).toEqual(4.53);
+  });
+
+  it("adds two negative numbers", () => {
+    const options = {
+      precision: 2,
+    };
+
+    const calc = new Calculator(options);
+    const result = calc.add(-1.333, -3.2);
+    expect(result).toEqual(-4.53);
   });
 });
