@@ -1,0 +1,38 @@
+Equality
+- .toEqual
+use this with objects and arrays
+expect(1+1).toEqual(2) //PASS
+expect({name:'Emmanuel'}).toEqual({name:'Emmanuel'}) //PASS
+
+- .toBe
+use this with primitive values
+expect(1+1).toBe(2) //PASS
+expect({name:'Emmanuel'}).toBe({name:'Emmanuel'}) //FAIL
+
+Oposite matching
+- .not
+assing the opposite value
+expect(1+2).not.toEqual(2)
+
+- .toMatch
+match regular expressions
+expect('185-3345-3343').toMatch(/^\d{3}-\d{4}-\d{4}$/)
+
+Comparations with numbers 
+- .toBeGraterThan(2)
+- .toBeGraterThanOrEqual(2)
+- .toBeLessThan(2)
+- .toBeLessThanOrEqual(2)
+
+ARRAYS
+
+.toContainEqual()
+Just checks the value (not the memory address)
+
+.toContain()
+checks if the item is in the list by
+strictly comparing using ===
+
+.toBeDefined()
+to check that a variable is not undefined.
+It could be a returned value of a function, a variable, a piece of an object
