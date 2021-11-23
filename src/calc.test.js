@@ -29,22 +29,22 @@ describe("Hotel Sunshine", () => {
 });
 
 describe("addition", () => {
-  it("adds two positive numbers", () => {
+  let calc = null;
+
+  beforeEach(() => {
     const options = {
       precision: 2,
     };
 
-    const calc = new Calculator(options);
+    calc = new Calculator(options);
+  });
+
+  it("adds two positive numbers", () => {
     const result = calc.add(1.333, 3.2);
     expect(result).toEqual(4.53);
   });
 
   it("adds two negative numbers", () => {
-    const options = {
-      precision: 2,
-    };
-
-    const calc = new Calculator(options);
     const result = calc.add(-1.333, -3.2);
     expect(result).toEqual(-4.53);
   });
