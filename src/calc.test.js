@@ -4,6 +4,6 @@ const add = require("./calc");
 describe("calculator", () => {
   //Test cases
   it("add two numbers", () => {
-    expect(add(1, 2)).toEqual(1);
+    expect(add(1, 2)).toEqual(3);
   });
 });
