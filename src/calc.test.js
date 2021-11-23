@@ -1,4 +1,4 @@
-const { add, Calculator } = require("./calc");
+const { add, Calculator, db } = require("./calc");
 
 //Test suit
 describe("calculator", () => {
@@ -47,5 +47,17 @@ describe("addition", () => {
   it("adds two negative numbers", () => {
     const result = calc.add(-1.333, -3.2);
     expect(result).toEqual(-4.53);
+  });
+});
+
+describe("database", () => {
+  beforeEach(() => {
+    db.connect("localhost", "9999", "user", "pass");
+  });
+  afterEach(() => {
+    db.disconnect();
+  });
+  it("some test", () => {
+    console.log("test is executed");
   });
 });

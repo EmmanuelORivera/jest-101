@@ -12,4 +12,12 @@ class Calculator {
   }
 }
 
-module.exports = { add, Calculator };
+const db = {
+  connect(host, port, user, password) {
+    console.log(`Server is running on: ${host}:${port}`);
+  },
+  disconnect() {
+    console.log("Server is disconnected");
+  },
+};
+module.exports = { add, Calculator, db };
