@@ -48,3 +48,27 @@ describe("number comparisons", () => {
     expect(1 + 2).toBeLessThanOrEqual(4);
   });
 });
+
+describe("array and object", () => {
+  it("match arrays", () => {
+    const users = ["Emmanuel", "John", "Jane"];
+    // Just checks the value
+    expect(users).toContainEqual("Emmanuel");
+    // Uses strictly comparing elements
+    expect(users).toContain(users[0]);
+  });
+
+  it.skip("object in array", () => {
+    const users = [{ name: "Emmanuel" }, { name: "John" }];
+
+    expect(users).toContainEqual({ name: "Emmanuel" });
+    expect(users).toContain({ name: "Emmanuel" });
+  });
+
+  it("match object", () => {
+    const user = { name: "Emmanuel", address: "street 123 number #321" };
+
+    expect(user.name).toBeDefined();
+    expect(user.age).not.toBeDefined();
+  });
+});
