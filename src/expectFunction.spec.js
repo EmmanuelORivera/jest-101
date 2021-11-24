@@ -42,7 +42,7 @@ describe("api", () => {
     projects: [{ name: "first project" }, { name: "second project" }],
   };
 
-  it("checks contains Emmanuel as a name and project as a name from projects", () => {
+  it("matcher {name:<CONTAIN>'Emmanuel',projects:[{name:<CONTAIN>'project'}]}", () => {
     const matcher = expect.objectContaining({
       name: expect.stringContaining("Emmanuel"),
       projects: expect.arrayContaining([
