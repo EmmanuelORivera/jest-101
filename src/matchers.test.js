@@ -1,4 +1,4 @@
-import { beforeAll, expect } from "@jest/globals";
+import { beforeAll, expect, it } from "@jest/globals";
 
 describe("equality", () => {
   let sum = null;
@@ -17,9 +17,34 @@ describe("equality", () => {
   });
 
   // Use this for primitive values
-  it(".toBe basic usage", () => {
+  it.skip(".toBe basic usage", () => {
     expect(sum).toBe(2);
     expect(name).toBe("Emmanuel");
     expect({ a: 1, b: 2 }).toBe({ b: 2, a: 1 }); // Should fail because .toBe is not deep equality
+  });
+});
+
+describe("opposite matching", () => {
+  it(".not basic usage", () => {
+    expect(1 + 2).not.toEqual(2);
+  });
+
+  it("match regular expression", () => {
+    expect("emmanuel").toMatch(/\w+/);
+  });
+
+  it("match numbers", () => {
+    expect("185-3345-3343").toMatch(/^\d{3}-\d{4}-\d{4}$/);
+    expect("1853-3345-3343").not.toMatch(/^\d{3}-\d{4}-\d{4}$/);
+  });
+});
+
+describe("number comparisons", () => {
+  it("compare numbers", () => {
+    expect(1 + 2).toBeGreaterThan(2);
+    expect(1 + 2).toBeGreaterThanOrEqual(2);
+
+    expect(1 + 2).toBeLessThan(4);
+    expect(1 + 2).toBeLessThanOrEqual(4);
   });
 });
